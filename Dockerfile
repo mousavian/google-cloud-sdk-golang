@@ -22,6 +22,9 @@ RUN tar xzf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz -C / && \
     ln -s /lib /lib64 && \
     gcloud config set core/disable_usage_reporting true && \
     gcloud config set component_manager/disable_update_check true && \
-    gcloud config set metrics/environment github_docker_image
+    gcloud config set metrics/environment github_docker_image && \
+    gcloud components install app-engine-go --quiet && \
+    ln -s /google-cloud-sdk/platform/google_appengine/goapp /google-cloud-sdk/bin/ && \
+    chmod +x /google-cloud-sdk/bin/goapp
 
 VOLUME ["/root/.config"]
