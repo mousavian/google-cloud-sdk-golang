@@ -7,6 +7,7 @@ ENV GOLANG_VERSION 1.8.3
 ENV PATH /google-cloud-sdk/bin:$PATH
 
 RUN apk --no-cache add \
+        gcc \
         curl \
         python \
         py-crcmod \
