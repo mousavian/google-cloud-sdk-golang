@@ -8,6 +8,7 @@ ENV PATH /google-cloud-sdk/bin:$PATH
 
 RUN apk --no-cache add \
         gcc \
+        musl-dev \
         curl \
         python \
         py-crcmod \
